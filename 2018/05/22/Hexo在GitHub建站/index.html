@@ -88,7 +88,7 @@
 <meta property="og:description" content="Github + Hexo 并且通过Godaddy搭建静态个人网站详细教程（1）首先上干货 王哲的Blog开发环境：Windows 7开发语言：Markdown开发软件：Git，Node.js 作为一个程序员，有一个Blog来记录和分享平时所得是一个非常惬意的事情，但是由于种种原因，搭建一个私人的Blog是一件非常奢侈的事情，不仅成本高，而且很多时候繁琐的配置和环境已经吓退了一堆人了。所以，就有了">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://git-scm.com/book/en/v2/images/git-osx-installer.png">
-<meta property="og:updated_time" content="2018-05-22T15:34:47.034Z">
+<meta property="og:updated_time" content="2018-05-22T15:38:40.171Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo在GitHub建站">
 <meta name="twitter:description" content="Github + Hexo 并且通过Godaddy搭建静态个人网站详细教程（1）首先上干货 王哲的Blog开发环境：Windows 7开发语言：Markdown开发软件：Git，Node.js 作为一个程序员，有一个Blog来记录和分享平时所得是一个非常惬意的事情，但是由于种种原因，搭建一个私人的Blog是一件非常奢侈的事情，不仅成本高，而且很多时候繁琐的配置和环境已经吓退了一堆人了。所以，就有了">
@@ -334,6 +334,17 @@
 
           
           
+             <span id="/2018/05/22/Hexo在GitHub建站/" class="leancloud_visitors" data-flag-title="Hexo在GitHub建站">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
 
@@ -376,27 +387,45 @@
 <p>如果你想安装更新的版本，可以使用二进制安装程序。 官方维护的 OSX Git 安装程序可以在 Git 官方网站下载，网址为 <a href="http://git-scm.com/download/mac。" target="_blank" rel="noopener">http://git-scm.com/download/mac。</a><br><img src="https://git-scm.com/book/en/v2/images/git-osx-installer.png" alt="imgMacos"></p>
 <h4 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h4><p>安装完Git以后，然后就是设置Git了。<br>现在以在Windows下演示。</p>
 <ol>
-<li>首先打开Git Bash<blockquote>
+<li>首先打开Git Bash</li>
+</ol>
+<blockquote>
 <p>git config —global user.name “你的GitHub用户名”<br>git config —global user.email “你的GitHub注册邮箱”  </p>
 </blockquote>
-</li>
-<li>生成ssh密钥文件<blockquote>
-<p>ssh-keygen -t rsa -C “你的GitHub注册邮箱”<br>后面出现的所有都是回车确定。<br>然后找到生成的.ssh的文件夹中的id_rsa.pub密钥，将内容全部复制<br>路径一般为 C:<em>Users</em>你电脑的名称/.ssh<br>拷贝id_rsa.pub中的密钥  </p>
-</blockquote>
-</li>
-<li>然后进入你的Github页面，进入<a href="[Sign in to GitHub · GitHub](https://github.com/settings/keys">SSH and GPG keys</a>)页面，新建new SSH Key，标题任意填，个人建议填写Key连接的电脑，然后将刚才拷贝的id_rsa.pub信息粘贴进去，并点击确定。</li>
-<li>回到 Git Bash并且输入<blockquote>
-<p>ssh <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a><br>成功即可，因为这样可以省下很多以后再次认证的时间，因为公钥在Github上，私钥在你的电脑中，因为Github每次推送都需要验证身份合法性，每次ssh的时候，Github会自动公钥和私钥这样以后你从你的开发电脑进行推送的时候会减去很多认证的时间。<br>以上便是Git 的设置。</p>
-</blockquote>
-</li>
+<ol start="2">
+<li>生成ssh密钥文件</li>
 </ol>
+<blockquote>
+<p>ssh-keygen -t rsa -C “你的GitHub注册邮箱”  </p>
+</blockquote>
+<p>后面出现的所有都是回车确定。<br>然后找到生成的.ssh的文件夹中的id_rsa.pub密钥，将内容全部复制</p>
+<blockquote>
+<p>路径一般为 C:<em>Users</em>你电脑的名称/.ssh<br>拷贝id_rsa.pub中的密钥  </p>
+</blockquote>
+<ol start="3">
+<li>然后进入你的Github页面，进入<a href="[Sign in to GitHub · GitHub](https://github.com/settings/keys">SSH and GPG keys</a>)页面，新建new SSH Key，标题任意填，个人建议填写Key连接的电脑，然后将刚才拷贝的id_rsa.pub信息粘贴进去，并点击确定。</li>
+<li>回到 Git Bash并且输入</li>
+</ol>
+<blockquote>
+<p>ssh <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>  </p>
+</blockquote>
+<p>成功即可，因为这样可以省下很多以后再次认证的时间，因为公钥在Github上，私钥在你的电脑中，因为Github每次推送都需要验证身份合法性，每次ssh的时候，Github会自动公钥和私钥这样以后你从你的开发电脑进行推送的时候会减去很多认证的时间。<br>以上便是Git 的设置。</p>
 <h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>Node.js 下载地址为<a href="[下载 | Node.js](https://nodejs.org/zh-cn/download/">Node.js Download</a>), 请将添加环境变量勾选上。<br>安装完成以后输入：</p>
 <blockquote>
-<p>node -v<br>如果出现安装的版本号，则安装成功。</p>
+<p>node -v   </p>
 </blockquote>
+<p>如果出现安装的版本号，则安装成功。</p>
 <h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>安装Hexo其实很简单，首先要在适当的位置新创建一个文件夹，以Blog Order 为例。<br>进入文件夹，按住shift并且点击鼠标右键，<br>点击 open command windows here<br>使用npm命令安装Hexo</p>
 <blockquote>
-<p>npm install -g hero-cli<br>安心等待ing ………………………<br>安装完成后首先初始化Blog<br>hexo init blog<br>这样Blog就创建完毕了。<br>现在Blog还在本地，如果想先看看这个传说中的Hexo到底是什么样子的，可以现在本地进行测试，步骤如下。<br>hexo new hallo_welt #创建新的Markdown页面<br>hexo g #生成网页<br>hero s #启动服务预览  </p>
+<p>npm install -g hero-cli  </p>
+</blockquote>
+<p>安心等待ing ………………………<br>安装完成后首先初始化Blog</p>
+<blockquote>
+<p>hexo init blog  </p>
+</blockquote>
+<p>这样Blog就创建完毕了。<br>现在Blog还在本地，如果想先看看这个传说中的Hexo到底是什么样子的，可以现在本地进行测试，步骤如下。</p>
+<blockquote>
+<p>hexo new hallo_welt #创建新的Markdown页面<br>hexo g #生成网页<br>hero s #启动服务预览  </p>
 </blockquote>
 <h3 id="Hexo-命令小知识"><a href="#Hexo-命令小知识" class="headerlink" title="Hexo 命令小知识"></a>Hexo 命令小知识</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo -g     #安装Hexo</span><br><span class="line">npm update hexo -g    #升级 </span><br><span class="line">hexo init    #初始化博客</span><br><span class="line"></span><br><span class="line">命令简写</span><br><span class="line">hexo n  &quot;我的博客&quot; == hexo new  &quot;我的博客&quot;   #新建文章</span><br><span class="line">hexo g == hexo generate   #生成</span><br><span class="line">hexo s == hexo server   #启动服务预览</span><br><span class="line">hexo d == hexo deploy   #部署</span><br><span class="line"></span><br><span class="line">hexo server     #Hexo会监视文件变动并自动更新，无须重启服务器</span><br><span class="line">hexo server -s    #静态模式</span><br><span class="line">hexo server -p 5000     #更改端口</span><br><span class="line">hexo server -i 192.168.1.1     #自定义 IP</span><br><span class="line">hexo clean     #清除缓存，若是网页正常情况下可以忽略这条命令</span><br></pre></td></tr></table></figure>
 <p>如果没有什么错误的话，启动localhost:4000 就可以看到你刚才创建的Blog了。</p>
@@ -624,7 +653,12 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -802,6 +836,113 @@
 
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("LKbbQbPTxGbNj1ieqwWQJRMJ-gzGzoHsz", "0n7ji28IkkGrGAgnsFDN0ANL");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 
