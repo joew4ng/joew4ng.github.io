@@ -88,7 +88,7 @@
 <meta property="og:description" content="Github + Hexo 并且通过Godaddy搭建静态个人网站详细教程（1）首先上干货 王哲的Blog开发环境：Windows 7开发语言：Markdown开发软件：Git，Node.js 作为一个程序员，有一个Blog来记录和分享平时所得是一个非常惬意的事情，但是由于种种原因，搭建一个私人的Blog是一件非常奢侈的事情，不仅成本高，而且很多时候繁琐的配置和环境已经吓退了一堆人了。所以，就有了">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://git-scm.com/book/en/v2/images/git-osx-installer.png">
-<meta property="og:updated_time" content="2018-05-22T15:05:45.555Z">
+<meta property="og:updated_time" content="2018-05-22T15:34:47.034Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo在GitHub建站">
 <meta name="twitter:description" content="Github + Hexo 并且通过Godaddy搭建静态个人网站详细教程（1）首先上干货 王哲的Blog开发环境：Windows 7开发语言：Markdown开发软件：Git，Node.js 作为一个程序员，有一个Blog来记录和分享平时所得是一个非常惬意的事情，但是由于种种原因，搭建一个私人的Blog是一件非常奢侈的事情，不仅成本高，而且很多时候繁琐的配置和环境已经吓退了一堆人了。所以，就有了">
@@ -402,16 +402,30 @@
 <p>如果没有什么错误的话，启动localhost:4000 就可以看到你刚才创建的Blog了。</p>
 <h2 id="推送个人网站"><a href="#推送个人网站" class="headerlink" title="推送个人网站"></a>推送个人网站</h2><p>以上是Hexo创建并且初始化Blog的基本步骤，但是下面要做的就是将这个Blog推送到Github Pages中。<br>在Blog文件夹中有个_config.yml的文件，这个是站点配置文件。所有有关站点的配置都要在这个文件中进行。<br>首先需要将Hexo与Github关联起来，在_config.yml文件找到deploy并且配置如下。</p>
 <blockquote>
-<p>deploy<br>    type: git<br>    repo: <a href="https://github.com/joew4ng/joew4ng.github.io.git" target="_blank" rel="noopener">https://github.com/joew4ng/joew4ng.github.io.git</a><br>    branch: master<br>但是经过我的测试，偶尔会发生识别不了repo，如果推送失败并且报错，请将repo改成<br>repo: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:joew4ng/joew4ng.github.io.git<br>亲测有效，修改完并且保存。<br>以上的步骤就是告诉Hexo需要把Blog部署到什么地方去。然后最后一步是需要安装Git部署的插件<br>npm install hexo-deployer-git —save<br>插件安装完成后，就需要将网站推送到你的Github中，其实很简单<br>hexo clean<br>hexo g<br>hero d<br>推送完成后，经过几分钟解析，输入你的Github地址比如 joew4ng.github.io便可以访问你的Blog了。</p>
+<p>deploy<br>    type: git<br>    repo: <a href="https://github.com/joew4ng/joew4ng.github.io.git" target="_blank" rel="noopener">https://github.com/joew4ng/joew4ng.github.io.git</a><br>    branch: master  </p>
 </blockquote>
+<p>但是经过我的测试，偶尔会发生识别不了repo，如果推送失败并且报错，请将repo改成</p>
+<blockquote>
+<p>repo: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:joew4ng/joew4ng.github.io.git  </p>
+</blockquote>
+<p>亲测有效，修改完并且保存。<br>以上的步骤就是告诉Hexo需要把Blog部署到什么地方去。然后最后一步是需要安装Git部署的插件</p>
+<blockquote>
+<p>npm install hexo-deployer-git —save  </p>
+</blockquote>
+<p>插件安装完成后，就需要将网站推送到你的Github中，其实很简单</p>
+<blockquote>
+<p>hexo clean<br>hexo g<br>hero d  </p>
+</blockquote>
+<p>推送完成后，经过几分钟解析，输入你的Github地址比如 joew4ng.github.io便可以访问你的Blog了。</p>
 <h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>这个域名其实是我在和朋友聊天的时候无意脑子一抽就买了，运营商是Godaddy，以前没有用过这个运营商的域名，第一次尝尝鲜。<br>然后又没有钱去买独立的服务器，只能先绑定在Github上了。</p>
 <ol>
 <li>首先你需要进入你的Blog setting页面，在这个页面中找到GitHub Pages，并且在Custom domain中填入你的私人域名。</li>
-<li>进入你私人域名的DNS管理页面，增添三条记录即可。<blockquote>
-<p>Type:A  Name:@ Value:192.30.252.153<br>Type:A  Name:@ Value:192.30.252.154<br>Type:CNAME  Name:www Value:joew4ng.github.io<br>经过一段时间的解析以后，通过你的私人域名就可以访问了。<br>这就完成了Github和私人域名的绑定的功能了。</p>
-</blockquote>
-</li>
+<li>进入你私人域名的DNS管理页面，增添三条记录即可。</li>
 </ol>
+<blockquote>
+<p>Type:A  Name:@ Value:192.30.252.153<br>Type:A  Name:@ Value:192.30.252.154<br>Type:CNAME  Name:www Value:joew4ng.github.io</p>
+</blockquote>
+<p>经过一段时间的解析以后，通过你的私人域名就可以访问了。<br>这就完成了Github和私人域名的绑定的功能了。</p>
 <hr>
 <p>By Joe     </p>
 
