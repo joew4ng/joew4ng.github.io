@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="football,ontology,owl,Protege," />
+  <meta name="keywords" content="java,排序," />
 
 
 
@@ -79,18 +79,22 @@
 
 
 
-<meta name="description" content="FootballNET, a football ontology写在伊始，2018年，又到了九月，各大校园又涌现了一波年轻的面庞，又是一年开学时，自己这块老蜡皮还是焦急的等待着自己的毕业成绩。然而在毕业之前，自己还是想做点东西来纪念下自己的硕士求学生涯，写代码这种很无聊的事情也就随之摆上了日程，这个时间点，虽然面临着找工作的压力，但是自己还是想抽点时间来梳理下自己的毕业论文的项目，虽然那个项目是属">
-<meta name="keywords" content="football,ontology,owl,Protege">
+<meta name="description" content="Java排序算法汇总（1）关于排序算法，大体上分为内部排序和外部排序，  内部排序（只使用内存）  插入排序 直接插入排序 希尔排序   选择排序 简单选择排序 堆排序   交换排序 冒泡排序 快速排序   归并排序 基数排序   外部排序（内存和外存结合使用）   直接插入排序直接插入介绍假设待排序的记录存放在数组 R[1..n]中。初始时，R[1]自成 1 个有序区，无序区为 R[2..n]。">
+<meta name="keywords" content="java,排序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FootballNET, a football ontology">
-<meta property="og:url" content="http://zhewang.de/2018/09/01/FootballNET, a football ontology/index.html">
+<meta property="og:title" content="Java排序算法汇总(1)">
+<meta property="og:url" content="http://zhewang.de/2018/09/02/Java排序算法汇总(1)/index.html">
 <meta property="og:site_name" content="Joe&#39;s Notes">
-<meta property="og:description" content="FootballNET, a football ontology写在伊始，2018年，又到了九月，各大校园又涌现了一波年轻的面庞，又是一年开学时，自己这块老蜡皮还是焦急的等待着自己的毕业成绩。然而在毕业之前，自己还是想做点东西来纪念下自己的硕士求学生涯，写代码这种很无聊的事情也就随之摆上了日程，这个时间点，虽然面临着找工作的压力，但是自己还是想抽点时间来梳理下自己的毕业论文的项目，虽然那个项目是属">
+<meta property="og:description" content="Java排序算法汇总（1）关于排序算法，大体上分为内部排序和外部排序，  内部排序（只使用内存）  插入排序 直接插入排序 希尔排序   选择排序 简单选择排序 堆排序   交换排序 冒泡排序 快速排序   归并排序 基数排序   外部排序（内存和外存结合使用）   直接插入排序直接插入介绍假设待排序的记录存放在数组 R[1..n]中。初始时，R[1]自成 1 个有序区，无序区为 R[2..n]。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-02T12:26:18.295Z">
+<meta property="og:image" content="https://github.com/joew4ng/Abbildungen/blob/master/blogPicture/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5.jpg?raw=true">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=O%28N%5E2%29">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=O%28N%5E2%29">
+<meta property="og:updated_time" content="2018-09-02T20:02:56.231Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FootballNET, a football ontology">
-<meta name="twitter:description" content="FootballNET, a football ontology写在伊始，2018年，又到了九月，各大校园又涌现了一波年轻的面庞，又是一年开学时，自己这块老蜡皮还是焦急的等待着自己的毕业成绩。然而在毕业之前，自己还是想做点东西来纪念下自己的硕士求学生涯，写代码这种很无聊的事情也就随之摆上了日程，这个时间点，虽然面临着找工作的压力，但是自己还是想抽点时间来梳理下自己的毕业论文的项目，虽然那个项目是属">
+<meta name="twitter:title" content="Java排序算法汇总(1)">
+<meta name="twitter:description" content="Java排序算法汇总（1）关于排序算法，大体上分为内部排序和外部排序，  内部排序（只使用内存）  插入排序 直接插入排序 希尔排序   选择排序 简单选择排序 堆排序   交换排序 冒泡排序 快速排序   归并排序 基数排序   外部排序（内存和外存结合使用）   直接插入排序直接插入介绍假设待排序的记录存放在数组 R[1..n]中。初始时，R[1]自成 1 个有序区，无序区为 R[2..n]。">
+<meta name="twitter:image" content="https://github.com/joew4ng/Abbildungen/blob/master/blogPicture/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5.jpg?raw=true">
 
 
 
@@ -120,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://zhewang.de/2018/09/01/FootballNET, a football ontology/"/>
+  <link rel="canonical" href="http://zhewang.de/2018/09/02/Java排序算法汇总(1)/"/>
 
 
 
 
 
-  <title>FootballNET, a football ontology | Joe's Notes</title>
+  <title>Java排序算法汇总(1) | Joe's Notes</title>
   
 
 
@@ -275,7 +279,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhewang.de/2018/09/01/FootballNET, a football ontology/">
+    <link itemprop="mainEntityOfPage" href="http://zhewang.de/2018/09/02/Java排序算法汇总(1)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Joe">
@@ -292,7 +296,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">FootballNET, a football ontology</h1>
+          <h1 class="post-title" itemprop="name headline">Java排序算法汇总(1)</h1>
         
 
         <div class="post-meta">
@@ -304,8 +308,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T19:00:43+02:00">
-                2018-09-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T23:58:30+02:00">
+                2018-09-02
               </time>
             
 
@@ -327,8 +331,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ontoloy/" itemprop="url" rel="index">
-                    <span itemprop="name">Ontoloy</span>
+                  <a href="/categories/排序算法/" itemprop="url" rel="index">
+                    <span itemprop="name">排序算法</span>
                   </a>
                 </span>
 
@@ -344,7 +348,7 @@
 
           
           
-             <span id="/2018/09/01/FootballNET, a football ontology/" class="leancloud_visitors" data-flag-title="FootballNET, a football ontology">
+             <span id="/2018/09/02/Java排序算法汇总(1)/" class="leancloud_visitors" data-flag-title="Java排序算法汇总(1)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -375,17 +379,80 @@
       
 
       
-        <h1 id="FootballNET-a-football-ontology"><a href="#FootballNET-a-football-ontology" class="headerlink" title="FootballNET, a football ontology"></a>FootballNET, a football ontology</h1><p>写在伊始，2018年，又到了九月，各大校园又涌现了一波年轻的面庞，又是一年开学时，自己这块老蜡皮还是焦急的等待着自己的毕业成绩。然而在毕业之前，自己还是想做点东西来纪念下自己的硕士求学生涯，写代码这种很无聊的事情也就随之摆上了日程，这个时间点，虽然面临着找工作的压力，但是自己还是想抽点时间来梳理下自己的毕业论文的项目，虽然那个项目是属于实验室所有，私人不允许透漏，所以，我就将主义打到了自己最喜欢的足球身上，絮絮叨叨一大段，没办法，谁让我是一个有着一颗少男心的程序员。括弧笑。</p>
-<h2 id="什么是FootballNET"><a href="#什么是FootballNET" class="headerlink" title="什么是FootballNET"></a>什么是FootballNET</h2><p>说起本体，大家应该既陌生又熟悉，一个几十年前就有的概念，随着Google推出的知识图谱，在现在大热的机器学习，人工智能，AI，混沌系统的影响下，貌似又复活了，那么，什么是本体，一个哲学概念？还是一个计算机概念。</p>
+        <h1 id="Java排序算法汇总（1）"><a href="#Java排序算法汇总（1）" class="headerlink" title="Java排序算法汇总（1）"></a>Java排序算法汇总（1）</h1><p>关于排序算法，大体上分为内部排序和外部排序，</p>
+<ol>
+<li><p>内部排序（只使用内存）</p>
+<ul>
+<li>插入排序<ul>
+<li>直接插入排序</li>
+<li>希尔排序</li>
+</ul>
+</li>
+<li>选择排序<ul>
+<li>简单选择排序</li>
+<li>堆排序</li>
+</ul>
+</li>
+<li>交换排序<ul>
+<li>冒泡排序</li>
+<li>快速排序</li>
+</ul>
+</li>
+<li>归并排序</li>
+<li>基数排序</li>
+</ul>
+</li>
+<li><p>外部排序（内存和外存结合使用）</p>
+</li>
+</ol>
+<h2 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h2><h3 id="直接插入介绍"><a href="#直接插入介绍" class="headerlink" title="直接插入介绍"></a>直接插入介绍</h3><p>假设待排序的记录存放在数组 R[1..n]中。初始时，R[1]自成 1 个有序区，无序区为 R[2..n]。从 i=2 起直至 i=n 为止，依次将 R[i] 插入当前的有序区 R[1..i-1] 中，生成含 n 个记录的有序区。</p>
+<p><img src="https://github.com/joew4ng/Abbildungen/blob/master/blogPicture/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5.jpg?raw=true" alt="直接插入图解"></p>
+<p>图中将数列分为有序区和无序区。我们需要做的工作只有两个：(1)取出无序区中的第1个数，并找出它在有序区对应的位置。(2)将无序区的数据插入到有序区；若有必要的话，则对有序区中的相关数据进行移位。看，是不是很简单。</p>
+<h3 id="直接插入步骤"><a href="#直接插入步骤" class="headerlink" title="直接插入步骤"></a>直接插入步骤</h3><ol>
+<li><p>从第一个元素开始，该元素可以认为已经被排序</p>
+</li>
+<li><p>取出下一个元素，在已经排序的元素序列中从后向前扫描</p>
+</li>
+<li><p>如果该元素（已排序）大于新元素，将该元素移到下一位置</p>
+</li>
+<li><p>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</p>
+</li>
+<li><p>将新元素插入到该位置中</p>
+</li>
+<li><p>重复步骤2，直到排好序为止</p>
+</li>
+</ol>
+<h3 id="直接插入实例"><a href="#直接插入实例" class="headerlink" title="直接插入实例"></a>直接插入实例</h3><p>下面举一个简单的例子。</p>
+<p>比如是原始数组为</p>
 <blockquote>
-<p>在计算机科学与信息科学领域，理论上，本体是指一种“形式化的，对于共享概念体系的明确而又详细的说明”。本体提供的是一种共享词表，也就是特定领域之中那些存在着的对象类型或概念及其属性和相互关系；或者说，本体就是一种特殊类型的术语集，具有结构化的特点，且更加适合于在计算机系统之中使用；或者说，本体实际上就是对特定领域之中某套概念及其相互之间关系的形式化表达（formal representation）。本体是人们以自己兴趣领域的知识为素材，运用信息科学的本体论原理而编写出来的作品。本体一般可以用来针对该领域的属性进行推理，亦可用于定义该领域（也就是对该领域进行建模）。此外，有时人们也会将“本体”称为“本体论。<br>作为一种关于现实世界或其中某个组成部分的知识表达形式，本体目前的应用领域包括（但不仅限于）：人工智能、语义网、软件工程、 生物医学信息学、图书馆学以及信息架构。</p>
+<p>[3, 6, 2, 7, 4]</p>
 </blockquote>
-<p>本体自身也分好多种，有顶级本体，简而言之就是约束本体，又有领域本体，简而言之就是各个领域抽象出的本体，比如草药本体，又如各大医疗本体，还有其他的比如术语本体。那么，什么是足球本体，足球本体就是一个涵盖了英超，西甲，法甲，德甲，意甲以及中超所有俱乐部信息以及其球员信息的术语集，虽然现在只有英超和西甲俱乐部的数据，球员数据还等待后续填写，其中所有数据都来源于Wikipedia和<a href="http://www2.squawka.com以及其官网。" target="_blank" rel="noopener">http://www2.squawka.com以及其官网。</a></p>
-<p>手动创建本体是一个很费时间精力的工作，这就可以宣传一波莱比锡大学med-onto小组有一个项目，叫Expert2OWL,这个项目是简化本体创建过程，使得创建者专注于信息的提取，和关系的提取，而不需要过分关注于IDE，但是由于这个项目还未发布，所以FootballNET只能通过手动创建。</p>
-<p>虽然这个本体还很简陋，希望有兴趣的朋友可以联系我，我们可以一起维护这个项目。做一个有趣的工作，让自己更开心。</p>
-<p><a href="https://github.com/joew4ng/footballnet" target="_blank" rel="noopener">FootballNET Github地址</a></p>
+<p>第一轮，把 3 作为已经排好序的数列，取出 6 和 3 进行比较，6 大于 3 ，保持位置不变，新的有序数组为 [3, 6]</p>
+<blockquote>
+<p>[3, 6 , 2, 7, 4]</p>
+</blockquote>
+<p>第二轮， 取出后面的数组元素 2，在已经排好序的 [3, 6] 数组中从后向前比较，与 6 比较，小于 6，将 6 向后移动一个位置， 再与 3 进行比较，小于 3 ，将 3 向后移动一个位置，前面没有未比较的数字了，将 2 放在原来 3 的位置上， 新的有序数组为 [2, 3, 6]</p>
+<blockquote>
+<p>[2, 3, 6, 7, 4]</p>
+</blockquote>
+<p>第三轮， 7 大于 6， 则保持有序数组不变，并且插入有序数组最后一位， 组成新的有序数组为 [2, 3, 6, 7]</p>
+<blockquote>
+<p>[2, 3, 6, 7, 4]</p>
+</blockquote>
+<p>第四轮， 取出数字 4 与有序数组最后一位进行比较，4 &lt; 7 则，把 7 往后移动一位，再与 6 进行比较，小于 6，将 6 后移一位， 再与 3 比较，大于 3， 则 插在 3 后面。形成新的有序数组[2, 3, 4, 6, 7]</p>
+<blockquote>
+<p>[2, 3, 4, 6, 7]</p>
+</blockquote>
+<h3 id="直接插入Java代码实现"><a href="#直接插入Java代码实现" class="headerlink" title="直接插入Java代码实现"></a>直接插入Java代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> sort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Straight_Insertion_Sort</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(<span class="keyword">int</span>[] arr1)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; arr1.length; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &gt; <span class="number">0</span>; j --) &#123;</span><br><span class="line">				<span class="keyword">if</span>(arr1[j] &lt; arr1[j-<span class="number">1</span>]) &#123;</span><br><span class="line">					<span class="keyword">int</span> temp = arr1[j-<span class="number">1</span>];</span><br><span class="line">					arr1[j-<span class="number">1</span>] = j;</span><br><span class="line">					arr1[j] = temp;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span>[] arrTest = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">2</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">1</span>&#125;;</span><br><span class="line">		Straight_Insertion_Sort st = <span class="keyword">new</span> Straight_Insertion_Sort();</span><br><span class="line">		st.insertionSort(arrTest);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i : arrTest) &#123;</span><br><span class="line">			System.out.print(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>经过测试输出结果为 </p>
+<blockquote>
+<p>2 2 3 6 7</p>
+</blockquote>
+<p>以上就是最基本的直接插入Java代码实现。</p>
+<h3 id="直接插入的时间复杂度和稳定性"><a href="#直接插入的时间复杂度和稳定性" class="headerlink" title="直接插入的时间复杂度和稳定性"></a>直接插入的时间复杂度和稳定性</h3><p>直接插入排序的时间复杂度是 <img src="https://www.zhihu.com/equation?tex=O%28N%5E2%29" alt="O(N^2)"> ：假设被排序的数列中有N个数，遍历一趟时间复杂度是O(N)，需遍历多少次呢？N-1次，因此，其时间复杂度是 <img src="https://www.zhihu.com/equation?tex=O%28N%5E2%29" alt="O(N^2)"> 。</p>
+<p>直接插入排序是稳定的算法，它满足稳定算法的定义：假设在数列中存在a[i]=a[j]，若在排序之前，a[i]在a[j]前面；并且排序之后，a[i]仍然在a[j]前面。则这个排序算法是稳定的！</p>
 <hr>
-<p>By Joe</p>
+<p>by Joe</p>
 
       
     </div>
@@ -403,13 +470,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/football/" rel="tag"><i class="fa fa-tag"></i> football</a>
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
           
-            <a href="/tags/ontology/" rel="tag"><i class="fa fa-tag"></i> ontology</a>
-          
-            <a href="/tags/owl/" rel="tag"><i class="fa fa-tag"></i> owl</a>
-          
-            <a href="/tags/Protege/" rel="tag"><i class="fa fa-tag"></i> Protege</a>
+            <a href="/tags/排序/" rel="tag"><i class="fa fa-tag"></i> 排序</a>
           
         </div>
       
@@ -422,8 +485,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/22/Hexo在GitHub建站1/" rel="next" title="Hexo在GitHub建站1">
-                <i class="fa fa-chevron-left"></i> Hexo在GitHub建站1
+              <a href="/2018/09/01/Hexo在GitHub建站2/" rel="next" title="Github + Hexo 并且通过Godaddy搭建静态个人网站详细教程（2）">
+                <i class="fa fa-chevron-left"></i> Github + Hexo 并且通过Godaddy搭建静态个人网站详细教程（2）
               </a>
             
           </div>
@@ -431,10 +494,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/01/Hexo在GitHub建站2/" rel="prev" title="Github + Hexo 并且通过Godaddy搭建静态个人网站详细教程（2）">
-                Github + Hexo 并且通过Godaddy搭建静态个人网站详细教程（2） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -570,7 +629,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#FootballNET-a-football-ontology"><span class="nav-number">1.</span> <span class="nav-text">FootballNET, a football ontology</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是FootballNET"><span class="nav-number">1.1.</span> <span class="nav-text">什么是FootballNET</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java排序算法汇总（1）"><span class="nav-number">1.</span> <span class="nav-text">Java排序算法汇总（1）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#直接插入排序"><span class="nav-number">1.1.</span> <span class="nav-text">直接插入排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#直接插入介绍"><span class="nav-number">1.1.1.</span> <span class="nav-text">直接插入介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接插入步骤"><span class="nav-number">1.1.2.</span> <span class="nav-text">直接插入步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接插入实例"><span class="nav-number">1.1.3.</span> <span class="nav-text">直接插入实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接插入Java代码实现"><span class="nav-number">1.1.4.</span> <span class="nav-text">直接插入Java代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接插入的时间复杂度和稳定性"><span class="nav-number">1.1.5.</span> <span class="nav-text">直接插入的时间复杂度和稳定性</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
