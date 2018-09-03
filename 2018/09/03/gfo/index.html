@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="ontology,GFO,顶级本体," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="论GFO 的基本框架及顶层本体比较讨论（转贴）最近读了一篇介绍GFO的文章，想推荐给大家。 via Chinese Journal of Library and Information Science for Traditional Chinese Medicine Oct. 2015 Vol. 39 No. 5 龙海，朱彦 近年来，本体学或本体论（Ontology）在信息系统领域中的研究和应用越">
+<meta name="keywords" content="ontology,GFO,顶级本体">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论GFO 的基本框架及顶层本体比较讨论（转贴）">
+<meta property="og:url" content="http://zhewang.de/2018/09/03/gfo/index.html">
+<meta property="og:site_name" content="Joe&#39;s Notes">
+<meta property="og:description" content="论GFO 的基本框架及顶层本体比较讨论（转贴）最近读了一篇介绍GFO的文章，想推荐给大家。 via Chinese Journal of Library and Information Science for Traditional Chinese Medicine Oct. 2015 Vol. 39 No. 5 龙海，朱彦 近年来，本体学或本体论（Ontology）在信息系统领域中的研究和应用越">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/joew4ng/Abbildungen/blob/master/blogPicture/GFO%E5%9F%BA%E6%9C%AC%E5%88%86%E7%B1%BB%E6%A0%91.png?raw=true">
+<meta property="og:image" content="https://github.com/joew4ng/Abbildungen/blob/master/blogPicture/SUMO%20%E5%9F%BA%E6%9C%AC%E5%88%86%E7%B1%BB%E6%A0%91.png?raw=true">
+<meta property="og:image" content="https://github.com/joew4ng/Abbildungen/blob/master/blogPicture/DOLCE%20%E5%9F%BA%E6%9C%AC%E5%88%86%E7%B1%BB%E6%A0%91.png?raw=true">
+<meta property="og:image" content="https://github.com/joew4ng/Abbildungen/blob/master/blogPicture/BFO%20%E5%9F%BA%E6%9C%AC%E5%88%86%E7%B1%BB%E6%A0%91.png?raw=true">
+<meta property="og:image" content="https://github.com/joew4ng/Abbildungen/blob/master/blogPicture/4%20%E7%A7%8D%E9%A1%B6%E5%B1%82%E6%9C%AC%E4%BD%93%E7%9A%84%E8%AF%84%E4%BC%B0%E4%B8%8E%E5%AF%B9%E6%AF%94.png?raw=true">
+<meta property="og:updated_time" content="2018-09-03T10:59:39.042Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="论GFO 的基本框架及顶层本体比较讨论（转贴）">
+<meta name="twitter:description" content="论GFO 的基本框架及顶层本体比较讨论（转贴）最近读了一篇介绍GFO的文章，想推荐给大家。 via Chinese Journal of Library and Information Science for Traditional Chinese Medicine Oct. 2015 Vol. 39 No. 5 龙海，朱彦 近年来，本体学或本体论（Ontology）在信息系统领域中的研究和应用越">
+<meta name="twitter:image" content="https://github.com/joew4ng/Abbildungen/blob/master/blogPicture/GFO%E5%9F%BA%E6%9C%AC%E5%88%86%E7%B1%BB%E6%A0%91.png?raw=true">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhewang.de/2018/09/03/gfo/"/>
+
+
+
+
+
+  <title>论GFO 的基本框架及顶层本体比较讨论（转贴） | Joe's Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+<a href="https://github.com/joew4ng" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Joe's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">do more talk less</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-footballnet">
+          <a href="/FootballNET" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            FootballNET
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhewang.de/2018/09/03/gfo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Joe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/bf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Joe's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">论GFO 的基本框架及顶层本体比较讨论（转贴）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-03T14:57:48+02:00">
+                2018-09-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ontology/" itemprop="url" rel="index">
+                    <span itemprop="name">ontology</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/09/03/gfo/" class="leancloud_visitors" data-flag-title="论GFO 的基本框架及顶层本体比较讨论（转贴）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="论GFO-的基本框架及顶层本体比较讨论（转贴）"><a href="#论GFO-的基本框架及顶层本体比较讨论（转贴）" class="headerlink" title="论GFO 的基本框架及顶层本体比较讨论（转贴）"></a>论GFO 的基本框架及顶层本体比较讨论（转贴）</h1><p>最近读了一篇介绍GFO的文章，想推荐给大家。</p>
+<p><em>via Chinese Journal of Library and Information Science for Traditional Chinese Medicine Oct. 2015 Vol. 39 No. 5 龙海，朱彦</em></p>
+<p>近年来，本体学或本体论（Ontology）在信息系统领域中的研究和应用越来越普遍，其重要性在电子商务、语义网络、企业、信息集成、自然语言处理、知识工程、数据库等不同领域得到了日益广泛的承认和重视。一般来说，本体或本体论有两个方面的涵义。其最初的涵义是哲学层面上的，指一种研究世界本质的形而上学；其二是指在信息科学当中的本体学。按照 Gruber[1]提出的定义，本体是对某一可共享的概念模型的形式化的和明确的规范说明。</p>
+<h2 id="1-顶层本体的应用"><a href="#1-顶层本体的应用" class="headerlink" title="1. 顶层本体的应用"></a>1. 顶层本体的应用</h2><p>按照本体的抽象化程度，本体一般可分为顶层本体、中间层本体、领域本体、任务本体、应用本体等。而顶层本体是高层的与某个特定领域或任务无关的本体，它通常只表达一些常识性概念和范畴，如时间、空间、对象、事件等。顶层本体具有普遍性和抽象性，它可以作为构建领域本体的基础，并且为不同系统提供一个共同的知识库（见表 1）。利用顶层本体来构建领域本体，利用顶层 本体中已有的概念集、规范的关系定义和公理定 义，以及合理的逻辑结构，可以大大减少本体构建 过程中的复杂性，省时省力；同时，通过遵循同样 的标准规范，使得将来在不同本体或系统之间的映 射和互操作变得容易[2-3]。</p>
+<p>中医药领域顶层本体不仅为中医药领域本体的 构建提供指导框架，而且有利于实现中医药领域本 体同其他领域本体之间的整合，是实现不同领域知 识共享和互操作的基础。目前，关于中医药领域顶 层本体的研究， 基本都是参照 SUMO （ suggested upper merged ontology，推荐上层合并本体）和西 医 领 域 的 UMLS （ unified medical language system，一体化医学语言系统）进行构建[4-6] 。然 而，传统的中医学理论有着自己独特的体系架构， 无论是它的知识背景、哲学起源，还是中医药术语 的语义和语境，都与西医的知识体系有着极大的差 异。如果按照西医理论去诠释中医药概念和术语， 不顾及中医发展规律和特殊性，加之选择不当，很 容易产生语义表达二义性等诸多问题。</p>
+<pre><code>表1 三级本体类型的种类及描述对象
+</code></pre><table>
+<thead>
+<tr>
+<th>本体类型</th>
+<th>种类</th>
+<th>描述对象</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>顶级本体</td>
+<td>DOLCE，SUMO，CYC，GFO，BFO</td>
+<td>描述对客观世界最具抽象性的和普遍性的概念，如空间、世界、事件、对象、过程等</td>
+</tr>
+<tr>
+<td>领域顶层本体</td>
+<td>GALEN，GFOBio，中医药领域顶层本体等</td>
+<td>描述某个领域内最具抽象性和普遍性的概念，具有顶层本体和领域本体的一些共同特征</td>
+</tr>
+<tr>
+<td>领域本体和子领域本体</td>
+<td>GOLD，OBO，GO，FMA，中医证候本体等</td>
+<td>描述某个领域或其子领域内的具体的概念和其内在关系</td>
+</tr>
+</tbody>
+</table>
+<h1 id="2-GFO介绍"><a href="#2-GFO介绍" class="headerlink" title="2 GFO介绍"></a>2 GFO介绍</h1><h2 id="2-1-项目起源"><a href="#2-1-项目起源" class="headerlink" title="2.1 项目起源"></a>2.1 项目起源</h2><p>GFO（ general formal ontology， 通用形式 化本体）是目前可供构建领域本体所参考的主流 顶层本 体之 一，由 德国 学者 Heinrich Herre、 Barbara Heller 以及 Onto-Med 团队于 20 世纪 90 年代末创建。它的前身是基础本体的集成系统（integrated system of foundational ontologies, ISFO）的组成部分，而 ISFO 又是之前被称为 GOL- 项目，即后来的关于本体的发展和应用的集成框架（integrated framework for the development and application of ontologies, IFDAO）的一部分。IFDAO 是作为莱比锡大学信息学院（IFI）和莱大所 属的医学信息统计学暨流行病学研究所（IMISE）于 1999 年联合创建的，它包括本体语言库、开发工具 系统等一系列组件。该工具系统支持面向领域和一 般本体的开发工作[7]。</p>
+<h2 id="2-2-基本概念和框架"><a href="#2-2-基本概念和框架" class="headerlink" title="2.2 基本概念和框架"></a>2.2 基本概念和框架</h2><p>GFO 致力于构建一个可以适用于所有领域的顶 层本体，由 3 层元本体架构组成。⑴抽象顶层：包 括集合（set）和条目（item），这两个原始元素（或称初始元素，urelement）作为唯一的元-元-范 畴（ meta-meta-categories）。 ⑵元层面（ meta- level）： 是指基本层以上的元-范畴 (meta- categories) ， 又 被 称 之 为 抽 象 核 心 层 面（abstract-core-level），它从 item 中被推导出 来 ， 被 分 为 范 畴 （ category ） 和 个 体（individuals）。即本体当中的每一个事物或者是 范畴，或者是个体。⑶由所有相关的 GFO 基本类别 所组成的基本层面（basic-level），这个层面的谓 词可以通过领域-顶层连接公理与领域本体当中的范 畴进行对接[7]。</p>
+<p>见图1。</p>
+<p><img src="https://github.com/joew4ng/Abbildungen/blob/master/blogPicture/GFO%E5%9F%BA%E6%9C%AC%E5%88%86%E7%B1%BB%E6%A0%91.png?raw=true" alt="GFO基本分类树"></p>
+<h2 id="2-3-特点"><a href="#2-3-特点" class="headerlink" title="2.3 特点"></a>2.3 特点</h2><p>GFO 具有以下7 个特点：⑴一方面，区分静态实体和动态实体；另一方面，它既包含对象（3D，指三维空间）也包含过程（4D，指三维空间加时间维），并且将两者整合进一个连贯一致的框架。为复杂的领域知识建模过程创造良好的可能性。⑵通过承认共相（universals）、概念（concepts）和符号结构（symbol structures）这些上层节点以及它们之间的相互关系，呈现一个多元范畴方式，具备更多的抽象性和兼容性。⑶包括现实的各个层次<br>（stratum）与层面（level），比如物质层次、精神层次、社会层次，以及各层次之间的意识层面、化学层面、生物层面、性格层面、物理层面等。⑷通过本体映射和简约的原则支持不同领域本体之间互操作性。⑸提供形式化公理集，可以通过元逻辑方式加入到特定的领域本体中。⑹提供几个创新的本体模块，比如函数模块（function）和角色模块（role）。⑺可以支持各种领域本体或应用本体，首先是医学、生物学、生物医学领域，也包括经济学和社会学等众多领域。</p>
+<h1 id="3-其他常用顶级本体介绍"><a href="#3-其他常用顶级本体介绍" class="headerlink" title="3. 其他常用顶级本体介绍"></a>3. 其他常用顶级本体介绍</h1><p>在本体学领域，近年来有不同的专家小组先后推出了各自的顶层本体，包括DOLCE（descriptive<br>ontology for linguistic and cognitive engineering，语言学和认知工程的描述本体）、SUMO 、OpenCyc/ResearchCyc 、GFO 、BFO （ basic formal ontology，基本形式化本体）等，拥有各自<br>的理论表达和分类架构，它们的共生性和顶层处理方式在2006 年3 月的顶层本体峰会上都获得承认。</p>
+<h2 id="3-1-SUMO"><a href="#3-1-SUMO" class="headerlink" title="3.1 SUMO"></a>3.1 SUMO</h2><p>这是由电气和电子工程师协会组织（IEEE）所属的标准上层本体（ standard upper ontology, SUO ） 工作组创建的顶层本体（ <a href="http://www.adampease.org/OP/.），合并了已有的几个顶层本体。最初创建它是为了满足在众多领域之间对实体或事件进行标准化的描述和词汇定义的需求。它由美国科学家Lan" target="_blank" rel="noopener">http://www.adampease.org/OP/.），合并了已有的几个顶层本体。最初创建它是为了满足在众多领域之间对实体或事件进行标准化的描述和词汇定义的需求。它由美国科学家Lan</a> Niles 和Adam Pease 开发，现由技术知识公司（ Teknowledge Corporation）进行维护。SUMO 是一个轻量级的本体，它包括的概念和公理都是以一种能被大多数用户理解掌握的方式来表示（见图2）。其特点是致力于实现数据的互操作、信息检索、自动推理和自然语言处理；表示语言为SUO-KIF 语言；可以按GNU 公共许可协议提供联机浏览；概念完全公理化；与整个WordNet 建立映射；具有多国语言生成模板；支持浏览和编辑的工具。作为一个大型的免费的形式化本体库（包括中间层和众多领域层本体），它共有约25 000 条术语和约8000 条公理[8]。</p>
+<p><img src="https://github.com/joew4ng/Abbildungen/blob/master/blogPicture/SUMO%20%E5%9F%BA%E6%9C%AC%E5%88%86%E7%B1%BB%E6%A0%91.png?raw=true" alt="sumo基本分类树"></p>
+<h2 id="3-2-DOLCE"><a href="#3-2-DOLCE" class="headerlink" title="3.2 DOLCE"></a>3.2 DOLCE</h2><p>最初设计DOLCE 并不是作为可供候选的关于一般性或共相的标准本体，而是作为WonderWeb基础本体库中的一个可供参照的模块，致力于去捕捉在塑成自然语言和人类认识的过程当中的最基本的本体范畴。它所引入的范畴也被认为是认知的人造物，它们极端依赖于人类的感知能力、文化烙印以及社会习俗。因此，DOLCE 倾向于将自<br>己的范畴作为描述性的观念，即帮助已经形成的概念模型显式化，而不是去用某种形而上的方式去规定它们，特别是在语言学和认知工程学方面。DOLCE 在本体设计架构中排除了一般性或共相这个实体，而是用殊相或特殊性（particular）作为它的根元素（见图3）。因此，它是一个采取特殊观的描述型本体[9]。</p>
+<p><img src="https://github.com/joew4ng/Abbildungen/blob/master/blogPicture/DOLCE%20%E5%9F%BA%E6%9C%AC%E5%88%86%E7%B1%BB%E6%A0%91.png?raw=true" alt="DOLCE 基本分类树"></p>
+<h2 id="3-3-BFO"><a href="#3-3-BFO" class="headerlink" title="3.3 BFO"></a>3.3 BFO</h2><p>BFO（<a href="http://ifomis.uni-saarland.de/bfo/.）由美国学者Barry" target="_blank" rel="noopener">http://ifomis.uni-saarland.de/bfo/.）由美国学者Barry</a> Smith 和他的团队所创建，最初构建时部分采纳了DOLCE 和SUMO 的一些核心理念（见图4）。所不同的是，BFO 的目标是致力于成为某些特定的科学研究的顶层本体框架，例如在开放的生物学本体工场（open biological ontologies Foundry, OBO Foundry）框架里面的生物医学领域本体。因此，BFO 并没有包括其他一些科学领域比如物理、化学、生物领域的术语。而OBO Foundry<br>由超过60 个的OBO 本体所组成，这些本体的设计者都是遵循同样的设计原则来开发他们的本体。这些原则包括必须促进在广泛的OBO 框架内的本体之间的互操作性；必须确保能逐渐改善这些本体的质量和形式化的精确性；对库操作的设计必须能满足在生物医学领域日益增长的数据和信息集成的需要。</p>
+<p>另一方面，BFO 的基本理论采取的是一种所谓基于实证的现实主义的世界观，这实际上是一种简单的两分法。它把世界大体分为：⑴共相和殊相；⑵连续体和事件体（continuant and occurrent）；⑶相关的和非相关的（dependent and independent）；⑷形式的和物质的（formal and material）。其中最主要的是连续体和事件体这两大范畴。BFO 关于本体的核心理念可归纳为以下几点：⑴共相是与观察者无关的客观存在， 它们反映的是现实的不变量（invariants）；⑵所谓坏的本体，其常用术语缺乏与现实中的共相的对应联系，而只是强调与实例的对应关系；⑶所谓好的本体是现实的表示，所以它必须是建立在共相的基础上，而不是概念[10-11]。</p>
+<p><img src="https://github.com/joew4ng/Abbildungen/blob/master/blogPicture/BFO%20%E5%9F%BA%E6%9C%AC%E5%88%86%E7%B1%BB%E6%A0%91.png?raw=true" alt="BFO 基本分类树"></p>
+<h1 id="4-比较和评估"><a href="#4-比较和评估" class="headerlink" title="4. 比较和评估"></a>4. 比较和评估</h1><h2 id="4-1-总体架构和适用范围"><a href="#4-1-总体架构和适用范围" class="headerlink" title="4.1 总体架构和适用范围"></a>4.1 总体架构和适用范围</h2><p>对目前在领域本体建模时比较受推崇的SUMO 来说，正如文献[8]所言，虽然它和其他一些顶层本体和WordNet 建立了映射关系，但它目前没有继续开发下去，而是处于一种维护模式。而且它本身的规模比较小，只有约1000 个概念，是一个轻量级本体，将来在本体的应用方面会有局限性。与其他顶层本体相比，SUMO 的组件更少一些。<br>在生物医学等领域作为OBO 本体的参照本体的BFO，也不一定能适用于其他场合。BFO 中最主要的两大范畴是连续体和事件体，两者各自独立，互不相干，这是一个二维平面型的顶层本体架构，这样的架构虽然便于理解，但在知识表达上有局限性。而GFO 是一个多层次、立体型的顶层本体架构，更适合于对知识的动态的分析和表达。特别是涉及到任何有关过程和变化的理解方面，GFO 的思想和对于其概念的定义更为科学和合理。</p>
+<h2 id="4-2-对客观世界的理解"><a href="#4-2-对客观世界的理解" class="headerlink" title="4.2 对客观世界的理解"></a>4.2 对客观世界的理解</h2><p>DOLCE 、BFO 和GFO 三者侧重点不尽相同。DOLCE 强调个体（殊相）的重要性，所以它的本体架构是一个关于殊相的本体，在它的体系中排除了共相这个范畴。BFO 认为客观世界的真实性是通过共相即现实的不变量来体现的，所以它强调的是对共相的理解。而GFO 采取的是一种相对折中的态度，即承认普遍性，也强调特殊性。而且GFO 也反对BFO 中提出的所谓基于实证的现实主义立场，Herre[12]认为，Smith[11]的观点中存在着一个理论盲点，即关于观点“所谓好的本体是现实的表示，所以它必须是建立在共相的基础上，而不是概念”的表述是有缺陷的，因为它没有一个关于现实表达（reality representation）的现成定义可用。这个缺陷如果不通过对概念的使用就无法弥补，即没有概念就没有对现实的表达。</p>
+<h2 id="4-3-概念模型"><a href="#4-3-概念模型" class="headerlink" title="4.3 概念模型"></a>4.3 概念模型</h2><p>GFO 提出了自己独特的时空观模型和过程模型，即通过建立时间边界（time boundary）和时间区间（time interval。或称时间体chronoid）这样的概念模式。假设两个时点相遇但不重合，timeboundaries coincide 两个相邻接的不同过程在维护自身完整属性的同时，并不会相互混淆。类似的，GFO 通过精确区分即时体（presential）程（process），既避免了DOLCE 中关于瞬间的整体endurant 和连续的整体perdurant 概念含混的困境，也为认识论上历来的关于事物同一性的争议问题提出了一个完善的解决方案。</p>
+<p>另外，表2 基于开放度、结构化程度和可扩展性、成熟度、兼容性等评价指标[13]及其他相关基本信息[14]，对SUMO、DOCLE、BFO 和GFO 等4 种顶层本体进行了比较和评价。</p>
+<p><img src="https://github.com/joew4ng/Abbildungen/blob/master/blogPicture/4%20%E7%A7%8D%E9%A1%B6%E5%B1%82%E6%9C%AC%E4%BD%93%E7%9A%84%E8%AF%84%E4%BC%B0%E4%B8%8E%E5%AF%B9%E6%AF%94.png?raw=true" alt="4 种顶层本体的评估与对比"></p>
+<h1 id="5-小结"><a href="#5-小结" class="headerlink" title="5. 小结"></a>5. 小结</h1><p>本文介绍了顶层本体GFO 的基本概念、框架及特点；然后从总体架构和适用范围、对客观世界的理解等方面，与其他主流顶层本体进行了比较，并对兼容性、结构化程度和可扩展性、成熟度及开放度等方面进行评估。在创建领域本体时，面对顶层本体的选择有多种选项，但是最能满足实际需要的才是最适合的。而GFO 较好地满足了作为构建中医药领域本体上层框架的基本要求。以后将会针对中医药顶层本体的研究现状和难点，具体分析GFO 在<br>中医药顶层本体构建中的独特优势，进而提出基于GFO 构建中医药顶层本体的思路和路线图。</p>
+<h1 id="参考文件"><a href="#参考文件" class="headerlink" title="参考文件"></a>参考文件</h1><p>[1] Gruber T. A translation approach to portable ontology specifications[J]. Knowledge Acquisition,1993,5(2):199-220.<br>[2] 贾君枝,刘艳玲.顶层本体比较及评估[J].情报理论与实践,2007,30(3):397-400.<br>[3] 丁晟春,李岳盟,甘利人.基于顶层本体的领域本体综合构建方法研究信息系统[J].情报理论与实践,2007,30(2):236-242.<br>[4] 高成勉,包含飞,周强.本体构建原则及其在中医顶层本体构建中的应用[J].医学信息,2008,21(5):581-583.<br>[5] 于彤,崔蒙,李海燕,等.中医药学语言系统的语义网络框架:一个面向中医药领域的规范化顶层本体[J].中国数字医学,2014,9(1):44-47.<br>[6] 尹爱宁,张汝恩.建立中医药学一体化语言系统的方法学研究[J].中国中医药信息杂志,2003,10(9):90-92.<br>[7] Herre H, Heller B, Burek P, et al. General formal ontology(GFO)- A foundational ontology integrating objects and processes [R]. Leipzig: University of Leipzig,2006:1-90.<br>[8] 王红,丁媛,张剑.SUMO——顶级本体的介绍与启示[J].图书馆理论与实践,2007(3):96-98.<br>[9] Masolo C, Borgo S, Gangemi A, et al. WonderWeb Deliverable D18 Ontology Library(final)[R/OL]. Trento: Laboratory For Applied Ontology – ISTC – CNR,2003[2015-07-07]. <a href="http://www.loa.istc.cnr.it/old/Papers/D18.pdf" target="_blank" rel="noopener">http://www.loa.istc.cnr.it/old/Papers/D18.pdf</a>.<br>[10] Smith B, Kumar A, Bittner T. Basic Formal Ontology for Bioinformatics[R]. Saarbrücken: IFOMIS,2005:3-4.<br>[11] Smith B. Beyond Concepts: Ontology as Reality Representation[C]. Turin: IOS Press,2004:73-84.<br>[12] Herre H. General Formal Ontology (GFO): A Foundational Ontology for Conceptual Modelling [M]. Netherlands: Springer,2010:297-345.<br>[13] Semy SK, Pulvermacher MK, Obrst LJ. Toward the use of an upper ontology for U.S.government and U.S.military domanins an evaluation[R/OL]. Massachusetts: The MITRE Corporation Headquarters Bedford,2004[2015-07-01].<a href="http://www.researchgate.net/publication/265273652_Toward_the_Use_of" target="_blank" rel="noopener">http://www.researchgate.net/publication/265273652_Toward_the_Use_of</a>_<br>an_Upper_Ontology_for_U.S._Government_and_U.S._Military_Doma ins_An_Evaluation_September_2004.<br>[14] Mascardi V, Cordi V, Rosso P. A Comparison of Upper Ontologies[C]. Genova: Proceedings of the Workshop on Objects and Agents (WOA’07),2007:55-64.</p>
+<hr>
+<p>by Joe</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ontology/" rel="tag"><i class="fa fa-tag"></i> ontology</a>
+          
+            <a href="/tags/GFO/" rel="tag"><i class="fa fa-tag"></i> GFO</a>
+          
+            <a href="/tags/顶级本体/" rel="tag"><i class="fa fa-tag"></i> 顶级本体</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/02/Java排序算法汇总(1)/" rel="next" title="Java排序算法汇总(1)">
+                <i class="fa fa-chevron-left"></i> Java排序算法汇总(1)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/bf.jpg"
+                alt="Joe" />
+            
+              <p class="site-author-name" itemprop="name">Joe</p>
+              <p class="site-description motion-element" itemprop="description">不流俗，不盲从，不负此生。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#论GFO-的基本框架及顶层本体比较讨论（转贴）"><span class="nav-number">1.</span> <span class="nav-text">论GFO 的基本框架及顶层本体比较讨论（转贴）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-顶层本体的应用"><span class="nav-number">1.1.</span> <span class="nav-text">1. 顶层本体的应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-GFO介绍"><span class="nav-number">2.</span> <span class="nav-text">2 GFO介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-项目起源"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 项目起源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-基本概念和框架"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 基本概念和框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-特点"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 特点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-其他常用顶级本体介绍"><span class="nav-number">3.</span> <span class="nav-text">3. 其他常用顶级本体介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-SUMO"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 SUMO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-DOLCE"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 DOLCE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-BFO"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 BFO</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-比较和评估"><span class="nav-number">4.</span> <span class="nav-text">4. 比较和评估</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-总体架构和适用范围"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 总体架构和适用范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-对客观世界的理解"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 对客观世界的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-概念模型"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 概念模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-小结"><span class="nav-number">5.</span> <span class="nav-text">5. 小结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文件"><span class="nav-number">6.</span> <span class="nav-text">参考文件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Joe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">
+    Big Face Studio
+  </div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">
+    Deutschland
+  </div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共9.8k字</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("LKbbQbPTxGbNj1ieqwWQJRMJ-gzGzoHsz", "0n7ji28IkkGrGAgnsFDN0ANL");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
