@@ -79,22 +79,18 @@
 
 
 
-<meta name="description" content="Java排序算法汇总（1）关于排序算法，大体上分为内部排序和外部排序，  内部排序（只使用内存）  插入排序 直接插入排序 希尔排序   选择排序 简单选择排序 堆排序   交换排序 冒泡排序 快速排序   归并排序 基数排序   外部排序（内存和外存结合使用）   直接插入排序直接插入介绍假设待排序的记录存放在数组 R[1..n]中。初始时，R[1]自成 1 个有序区，无序区为 R[2..n]。">
+<meta name="description" content="Java排序算法汇总（2）接上篇《 Java排序算法汇总（1）》, 我们来谈谈二分插入排序，只是找合适的插入位置的方式不同，这里是按二分法找到合适的位置，可以减少比较的次数。 具体如下（实现为升序）： 设数组为a[0…n]。  将原序列分成有序区和无序区。a[0…i-1]为有序区，a[i…n] 为无序区。（i从1开始）  从无序区中取出第一个元素，即a[i]，使用二分查找算法在有序区中查找要插入的">
 <meta name="keywords" content="java,排序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java排序算法汇总(1)">
-<meta property="og:url" content="http://zhewang.de/2018/09/02/Java排序算法汇总(1)/index.html">
+<meta property="og:title" content="Java排序算法汇总(2)">
+<meta property="og:url" content="http://zhewang.de/2018/09/07/Java排序算法汇总-2/index.html">
 <meta property="og:site_name" content="Joe&#39;s Notes">
-<meta property="og:description" content="Java排序算法汇总（1）关于排序算法，大体上分为内部排序和外部排序，  内部排序（只使用内存）  插入排序 直接插入排序 希尔排序   选择排序 简单选择排序 堆排序   交换排序 冒泡排序 快速排序   归并排序 基数排序   外部排序（内存和外存结合使用）   直接插入排序直接插入介绍假设待排序的记录存放在数组 R[1..n]中。初始时，R[1]自成 1 个有序区，无序区为 R[2..n]。">
+<meta property="og:description" content="Java排序算法汇总（2）接上篇《 Java排序算法汇总（1）》, 我们来谈谈二分插入排序，只是找合适的插入位置的方式不同，这里是按二分法找到合适的位置，可以减少比较的次数。 具体如下（实现为升序）： 设数组为a[0…n]。  将原序列分成有序区和无序区。a[0…i-1]为有序区，a[i…n] 为无序区。（i从1开始）  从无序区中取出第一个元素，即a[i]，使用二分查找算法在有序区中查找要插入的">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://github.com/joew4ng/Abbildungen/blob/master/blogPicture/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5.jpg?raw=true">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=O%28N%5E2%29">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=O%28N%5E2%29">
-<meta property="og:updated_time" content="2018-09-02T20:02:56.231Z">
+<meta property="og:updated_time" content="2018-09-07T13:13:35.727Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java排序算法汇总(1)">
-<meta name="twitter:description" content="Java排序算法汇总（1）关于排序算法，大体上分为内部排序和外部排序，  内部排序（只使用内存）  插入排序 直接插入排序 希尔排序   选择排序 简单选择排序 堆排序   交换排序 冒泡排序 快速排序   归并排序 基数排序   外部排序（内存和外存结合使用）   直接插入排序直接插入介绍假设待排序的记录存放在数组 R[1..n]中。初始时，R[1]自成 1 个有序区，无序区为 R[2..n]。">
-<meta name="twitter:image" content="https://github.com/joew4ng/Abbildungen/blob/master/blogPicture/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5.jpg?raw=true">
+<meta name="twitter:title" content="Java排序算法汇总(2)">
+<meta name="twitter:description" content="Java排序算法汇总（2）接上篇《 Java排序算法汇总（1）》, 我们来谈谈二分插入排序，只是找合适的插入位置的方式不同，这里是按二分法找到合适的位置，可以减少比较的次数。 具体如下（实现为升序）： 设数组为a[0…n]。  将原序列分成有序区和无序区。a[0…i-1]为有序区，a[i…n] 为无序区。（i从1开始）  从无序区中取出第一个元素，即a[i]，使用二分查找算法在有序区中查找要插入的">
 
 
 
@@ -124,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://zhewang.de/2018/09/02/Java排序算法汇总(1)/"/>
+  <link rel="canonical" href="http://zhewang.de/2018/09/07/Java排序算法汇总-2/"/>
 
 
 
 
 
-  <title>Java排序算法汇总(1) | Joe's Notes</title>
+  <title>Java排序算法汇总(2) | Joe's Notes</title>
   
 
 
@@ -279,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhewang.de/2018/09/02/Java排序算法汇总(1)/">
+    <link itemprop="mainEntityOfPage" href="http://zhewang.de/2018/09/07/Java排序算法汇总-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Joe">
@@ -296,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java排序算法汇总(1)</h1>
+          <h1 class="post-title" itemprop="name headline">Java排序算法汇总(2)</h1>
         
 
         <div class="post-meta">
@@ -308,8 +304,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T23:58:30+02:00">
-                2018-09-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-07T17:12:06+02:00">
+                2018-09-07
               </time>
             
 
@@ -348,7 +344,7 @@
 
           
           
-             <span id="/2018/09/02/Java排序算法汇总(1)/" class="leancloud_visitors" data-flag-title="Java排序算法汇总(1)">
+             <span id="/2018/09/07/Java排序算法汇总-2/" class="leancloud_visitors" data-flag-title="Java排序算法汇总(2)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -379,78 +375,37 @@
       
 
       
-        <h1 id="Java排序算法汇总（1）"><a href="#Java排序算法汇总（1）" class="headerlink" title="Java排序算法汇总（1）"></a>Java排序算法汇总（1）</h1><p>关于排序算法，大体上分为内部排序和外部排序，</p>
+        <h1 id="Java排序算法汇总（2）"><a href="#Java排序算法汇总（2）" class="headerlink" title="Java排序算法汇总（2）"></a>Java排序算法汇总（2）</h1><p>接上篇《 Java排序算法汇总（1）》, 我们来谈谈二分插入排序，只是找合适的插入位置的方式不同，这里是按<strong>二分法找到合适的位置</strong>，可以减少比较的次数。</p>
+<p>具体如下<strong>（实现为升序）</strong>：</p>
+<p>设数组为a[0…n]。</p>
 <ol>
-<li><p>内部排序（只使用内存）</p>
-<ul>
-<li>插入排序<ul>
-<li>直接插入排序</li>
-<li>希尔排序</li>
-</ul>
+<li><p>将原序列分成有序区和无序区。a[0…i-1]为有序区，a[i…n] 为无序区。（i从1开始）</p>
 </li>
-<li>选择排序<ul>
-<li>简单选择排序</li>
-<li>堆排序</li>
-</ul>
+<li><p>从无序区中取出第一个元素，即a[i]，使用二分查找算法在有序区中查找要插入的位置索引j。</p>
 </li>
-<li>交换排序<ul>
-<li>冒泡排序</li>
-<li>快速排序</li>
-</ul>
+<li><p>将a[j]到a[i-1]的元素后移，并将a[i]赋值给a[j]。</p>
 </li>
-<li>归并排序</li>
-<li>基数排序</li>
-</ul>
-</li>
-<li><p>外部排序（内存和外存结合使用）</p>
+<li><p>重复步骤2~3，直到无序区元素为0。</p>
 </li>
 </ol>
-<h2 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h2><h3 id="直接插入介绍"><a href="#直接插入介绍" class="headerlink" title="直接插入介绍"></a>直接插入介绍</h3><p>假设待排序的记录存放在数组 R[1..n]中。初始时，R[1]自成 1 个有序区，无序区为 R[2..n]。从 i=2 起直至 i=n 为止，依次将 R[i] 插入当前的有序区 R[1..i-1] 中，生成含 n 个记录的有序区。</p>
-<p><img src="https://github.com/joew4ng/Abbildungen/blob/master/blogPicture/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5.jpg?raw=true" alt="直接插入图解"></p>
-<p>图中将数列分为有序区和无序区。我们需要做的工作只有两个：(1)取出无序区中的第1个数，并找出它在有序区对应的位置。(2)将无序区的数据插入到有序区；若有必要的话，则对有序区中的相关数据进行移位。看，是不是很简单。</p>
-<h3 id="直接插入步骤"><a href="#直接插入步骤" class="headerlink" title="直接插入步骤"></a>直接插入步骤</h3><ol>
-<li><p>从第一个元素开始，该元素可以认为已经被排序</p>
-</li>
-<li><p>取出下一个元素，在已经排序的元素序列中从后向前扫描</p>
-</li>
-<li><p>如果该元素（已排序）大于新元素，将该元素移到下一位置</p>
-</li>
-<li><p>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</p>
-</li>
-<li><p>将新元素插入到该位置中</p>
-</li>
-<li><p>重复步骤2，直到排好序为止</p>
-</li>
+<h2 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> sort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinarySearch</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">			<span class="keyword">int</span> temp = arr[i];</span><br><span class="line">			<span class="keyword">int</span> low = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">int</span> high = i - <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">int</span> mid = -<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">while</span>(low &lt;= high) &#123;</span><br><span class="line">				mid = low + (high - low) / <span class="number">2</span>;</span><br><span class="line">				<span class="keyword">if</span>(arr[mid] &gt; temp) &#123;</span><br><span class="line">					high = mid - <span class="number">1</span>;</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					low = mid + <span class="number">1</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = i-<span class="number">1</span>; j &gt;= low; j--) &#123;</span><br><span class="line">				arr[j + <span class="number">1</span>] = arr[j];</span><br><span class="line">			&#125;</span><br><span class="line">			arr[low] = temp;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span>[] arr1 = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">10</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">85</span>&#125;;</span><br><span class="line">		BinarySearch.binarySearch(arr1);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> temp : arr1) &#123;</span><br><span class="line">			System.out.print(temp);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：10,5,2,6,7,2,85</span><br><span class="line">输出：2，2，5，6，7，10，85</span><br></pre></td></tr></table></figure>
+<h2 id="算法复杂度"><a href="#算法复杂度" class="headerlink" title="算法复杂度"></a>算法复杂度</h2><ol>
+<li>时间复杂度：O(n^2)</li>
 </ol>
-<h3 id="直接插入实例"><a href="#直接插入实例" class="headerlink" title="直接插入实例"></a>直接插入实例</h3><p>下面举一个简单的例子。</p>
-<p>比如是原始数组为</p>
-<blockquote>
-<p>[3, 6, 2, 7, 4]</p>
-</blockquote>
-<p>第一轮，把 3 作为已经排好序的数列，取出 6 和 3 进行比较，6 大于 3 ，保持位置不变，新的有序数组为 [3, 6]</p>
-<blockquote>
-<p>[3, 6 , 2, 7, 4]</p>
-</blockquote>
-<p>第二轮， 取出后面的数组元素 2，在已经排好序的 [3, 6] 数组中从后向前比较，与 6 比较，小于 6，将 6 向后移动一个位置， 再与 3 进行比较，小于 3 ，将 3 向后移动一个位置，前面没有未比较的数字了，将 2 放在原来 3 的位置上， 新的有序数组为 [2, 3, 6]</p>
-<blockquote>
-<p>[2, 3, 6, 7, 4]</p>
-</blockquote>
-<p>第三轮， 7 大于 6， 则保持有序数组不变，并且插入有序数组最后一位， 组成新的有序数组为 [2, 3, 6, 7]</p>
-<blockquote>
-<p>[2, 3, 6, 7, 4]</p>
-</blockquote>
-<p>第四轮， 取出数字 4 与有序数组最后一位进行比较，4 &lt; 7 则，把 7 往后移动一位，再与 6 进行比较，小于 6，将 6 后移一位， 再与 3 比较，大于 3， 则 插在 3 后面。形成新的有序数组[2, 3, 4, 6, 7]</p>
-<blockquote>
-<p>[2, 3, 4, 6, 7]</p>
-</blockquote>
-<h3 id="直接插入Java代码实现"><a href="#直接插入Java代码实现" class="headerlink" title="直接插入Java代码实现"></a>直接插入Java代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> sort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Straight_Insertion_Sort</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(<span class="keyword">int</span>[] arr1)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; arr1.length; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &gt; <span class="number">0</span>; j --) &#123;</span><br><span class="line">				<span class="keyword">if</span>(arr1[j] &lt; arr1[j-<span class="number">1</span>]) &#123;</span><br><span class="line">					<span class="keyword">int</span> temp = arr1[j-<span class="number">1</span>];</span><br><span class="line">					arr1[j-<span class="number">1</span>] = j;</span><br><span class="line">					arr1[j] = temp;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span>[] arrTest = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">2</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">1</span>&#125;;</span><br><span class="line">		Straight_Insertion_Sort st = <span class="keyword">new</span> Straight_Insertion_Sort();</span><br><span class="line">		st.insertionSort(arrTest);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i : arrTest) &#123;</span><br><span class="line">			System.out.print(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>经过测试输出结果为 </p>
-<blockquote>
-<p>2 2 3 6 7</p>
-</blockquote>
-<p>以上就是最基本的直接插入Java代码实现。</p>
-<h3 id="直接插入的时间复杂度和稳定性"><a href="#直接插入的时间复杂度和稳定性" class="headerlink" title="直接插入的时间复杂度和稳定性"></a>直接插入的时间复杂度和稳定性</h3><p>直接插入排序的时间复杂度是 <img src="https://www.zhihu.com/equation?tex=O%28N%5E2%29" alt="O(N^2)"> ：假设被排序的数列中有N个数，遍历一趟时间复杂度是O(N)，需遍历多少次呢？N-1次，因此，其时间复杂度是 <img src="https://www.zhihu.com/equation?tex=O%28N%5E2%29" alt="O(N^2)"> 。</p>
-<p>直接插入排序是稳定的算法，它满足稳定算法的定义：假设在数列中存在a[i]=a[j]，若在排序之前，a[i]在a[j]前面；并且排序之后，a[i]仍然在a[j]前面。则这个排序算法是稳定的！</p>
+<p>二分查找插入位置，因为不是查找相等值，而是基于比较查插入合适的位置，所以必须查到最后一个元素才知道插入位置。</p>
+<p>二分查找最坏时间复杂度：当2^X&gt;=n时，查询结束，所以查询的次数就为x，而x等于log2n<strong>（以**</strong>2<strong><strong>为底，</strong></strong>n<strong>**的对数）</strong>。即O(log2n)</p>
+<p>所以，二分查找排序比较次数为：x=log2n</p>
+<p>二分查找插入排序耗时的操作有：比较 + 后移赋值。时间复杂度如下：</p>
+<p>1)        最好情况：查找的位置是有序区的最后一位后面一位，则无须进行后移赋值操作，其比较次数为：log2n  。即O(log2n)</p>
+<p>2)        最坏情况：查找的位置是有序区的第一个位置，则需要的比较次数为：log2n，需要的赋值操作次数为</p>
+<p>n(n-1)/2加上 (n-1) 次。即O(n^2)</p>
+<p>3)        渐进时间复杂度（平均时间复杂度）：O(n^2)</p>
+<ol start="2">
+<li>空间复杂度：O(1)</li>
+</ol>
+<p>从实现原理可知，二分查找插入排序是在原输入数组上进行后移赋值操作的（称“就地排序”），所需开辟的辅助空间跟输入数组规模无关，所以空间复杂度为：O(1)</p>
+<h2 id="稳定性"><a href="#稳定性" class="headerlink" title="稳定性"></a>稳定性</h2><p>二分查找排序是稳定的，不会改变相同元素的相对顺序。</p>
 <hr>
 <p>by Joe</p>
 
@@ -485,8 +440,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/01/Hexo在GitHub建站2/" rel="next" title="Github + Hexo 并且通过Godaddy搭建静态个人网站详细教程（2）">
-                <i class="fa fa-chevron-left"></i> Github + Hexo 并且通过Godaddy搭建静态个人网站详细教程（2）
+              <a href="/2018/09/03/gfo/" rel="next" title="论GFO 的基本框架及顶层本体比较讨论（转贴）">
+                <i class="fa fa-chevron-left"></i> 论GFO 的基本框架及顶层本体比较讨论（转贴）
               </a>
             
           </div>
@@ -494,10 +449,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/03/gfo/" rel="prev" title="论GFO 的基本框架及顶层本体比较讨论（转贴）">
-                论GFO 的基本框架及顶层本体比较讨论（转贴） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -633,7 +584,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java排序算法汇总（1）"><span class="nav-number">1.</span> <span class="nav-text">Java排序算法汇总（1）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#直接插入排序"><span class="nav-number">1.1.</span> <span class="nav-text">直接插入排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#直接插入介绍"><span class="nav-number">1.1.1.</span> <span class="nav-text">直接插入介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接插入步骤"><span class="nav-number">1.1.2.</span> <span class="nav-text">直接插入步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接插入实例"><span class="nav-number">1.1.3.</span> <span class="nav-text">直接插入实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接插入Java代码实现"><span class="nav-number">1.1.4.</span> <span class="nav-text">直接插入Java代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接插入的时间复杂度和稳定性"><span class="nav-number">1.1.5.</span> <span class="nav-text">直接插入的时间复杂度和稳定性</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java排序算法汇总（2）"><span class="nav-number">1.</span> <span class="nav-text">Java排序算法汇总（2）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码如下"><span class="nav-number">1.1.</span> <span class="nav-text">代码如下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法复杂度"><span class="nav-number">1.2.</span> <span class="nav-text">算法复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#稳定性"><span class="nav-number">1.3.</span> <span class="nav-text">稳定性</span></a></li></ol></li></ol></div>
             
 
           </div>
